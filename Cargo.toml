@@ -1,0 +1,38 @@
+[package]
+name = "rag"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-openai = "0.27"
+tokio = { version = "1.44", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dotenvy = "0.15"
+reqwest = { version = "0.12", features = ["json"] }
+regex = "1.11"
+thiserror = "2.0"
+
+[lib]
+name = "rag"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ask"
+path = "src/bin/ask.rs"
+
+[[bin]]
+name = "find_similar"
+path = "src/bin/find_similar.rs"
+
+[[bin]]
+name = "make_db"
+path = "src/bin/make_db.rs"
+
+[[bin]]
+name = "make_embeddings"
+path = "src/bin/make_embeddings.rs"
+
+[[bin]]
+name = "upload_embeddings"
+path = "src/bin/upload_embeddings.rs"
